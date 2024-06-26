@@ -1,0 +1,44 @@
+/*05-12-2023
+
+Calcola quanti numeri primi e con che densità ci sono fino a un dato numero*/
+
+
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <fstream>
+
+#include "Primi.h"
+
+using namespace std;
+
+int main () {
+
+    bool* v;
+    v == NULL;
+
+    int n_max, dim, conta=0;
+    float dens;    
+
+    do {
+         cout << "Inserire valore N_max" << endl;
+         cin >> n_max;
+         } while (n_max <= 3);
+
+    dim = n_max + 1;
+
+    v = new bool [dim];
+
+    crivello (v, dim);
+
+    for (int k=2; k<dim; k++) if ( v[k] ) conta++; 
+
+    dens = 1.*conta/n_max;
+
+    print (n_max, conta, dens, v);
+
+    delete []v;
+
+    return 0;
+}
