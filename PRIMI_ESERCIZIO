@@ -42,3 +42,87 @@ int main () {
 
     return 0;
 }
+
+
+
+
+
+/*05-12-2023
+
+Programma che ti dice se il numero inserito è primo o meno*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main () {
+
+    int n;
+    int h=1;
+
+    bool* v;
+    v == NULL;
+
+    cout << "Inserisci un numero intero" << endl;
+    cin >> n;
+
+    v = new bool [n-1];
+    
+    for (int k=0; k<n; k++) v[k]=false;
+
+    for ( int i=1; i<(n+1); i++) {
+
+        if ( n%i == 0) v[i-1] = true;
+    }
+
+    while (h<(n-1) and v[h] == false) h++;
+
+    if (h == (n-1)) cout << "Il numero è primo " << endl;
+    else cout << "il numero non è primo" << endl;
+
+    delete []v;
+
+    return 0;
+}
+
+
+
+
+/*05-12-2023
+
+Programma che ti dice se il numero inserito è un quadrato o meno*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main () {
+
+    int n;
+    int h=0;
+
+    bool* v;
+    v == NULL;
+
+    cout << "Inserisci un numero intero" << endl;
+    cin >> n;
+
+    v = new bool [n-1];
+    
+    for (int k=0; k<n; k++) v[k]=false;
+
+    for ( int i=0; i<n; i++) if ( pow(i,2) == n) v[i] = true;
+
+    while (h<n and v[h] == false) h++;
+
+    if (h == n) cout << "Il numero non è un quadrato " << endl;
+    else cout << "il numero è un quadrato" << endl;
+
+    delete []v;
+
+    return 0;
+}
